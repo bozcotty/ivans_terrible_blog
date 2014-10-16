@@ -1,0 +1,12 @@
+<section class="post">
+  <h2>Post <%= "#{post.id}: #{post.title}" %></h2>
+  <a href="javascript:toggleClass('apost');" style="background-color: #ccc; padding: 3px 5px;">Show/Hide Details</a>
+  <div class="apost">
+    <%= post.body %><br>
+    <%= render 'post_nav', post: post %><br>
+    <%# cache post do %>
+      <%= render post.comments %>
+    <%# end %>
+  </div>
+</section>
+
